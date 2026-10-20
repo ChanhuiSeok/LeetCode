@@ -8,12 +8,10 @@ class RecentCounter {
 
     ping(t: number): number {
         this.queue.push(t);
-
         // skip
         while (this.queue[this.head] < t - 3000) {
             this.head++;
         }
-
         return this.queue.length - this.head;
     }
 }
